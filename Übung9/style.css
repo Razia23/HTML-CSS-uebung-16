@@ -1,0 +1,282 @@
+/**********//**********/
+/***hier steht ein hintergrund bild für mein body.***/
+body {
+    padding: 0px;
+    margin: 0px;
+    background-image: url(background-2.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+}
+/*** im header habe ich animation benutzt.
+mit unterschiedliche farben.***/
+header {
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation-name: hintergrund;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgba(222, 184, 135, 0.219);
+    border: 2px black groove;
+}
+/*** hier liegt die farben von meine animation.***/
+@keyframes hintergrund {
+    0% {
+        background-image: linear-gradient(to right, rgb(83, 17, 17), rgba(187, 51, 51, 0.918), white, rgb(251, 127, 127), rgb(215, 158, 158));
+    }
+
+    40% {
+        background-image: linear-gradient(to bottom,skyblue, rgb(17, 17, 190), rgb(102, 102, 243), lightblue, skyblue,rgb(64, 64, 250));
+    }
+
+    75% {
+        background-image: conic-gradient(white, yellow, red, pink, white, yellow, white, red, gray, white,  brown,white, violet, white, yellow);
+    }
+
+    100% {
+        background-image: radial-gradient(circle at center, lightgreen,white, green, white, yellowgreen, yellow);
+    }
+}
+/*** da habe ich mediaquery benutzt für max-width***/
+@media screen and (max-width: 500px) {
+    header img {
+        max-width: 32px;
+        max-height: 32px;
+    }
+}
+/*** und hier habe ich mediaquery benutzt für min-width***/
+@media screen and (min-width: 501px) {
+    header img {
+        max-width: 64px;
+        max-height: 64px;
+    }
+}
+/*** mein ul elemente haben feste breit , um ganze reihe
+für sich zu haben***/
+header ul {
+    width: 100%;
+    align-items: center;
+    text-decoration: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 1px solid black;
+}
+/*** ich habe hier list-style-type: none gemacht,um
+die punktchen weg zu machen;***/
+header ul li {
+    padding: 10px;
+    list-style-type: none;
+}
+/*** ich habe hier text-dekoration: none gemacht,
+um
+die liene weg zu machen;***/
+header ul li a {
+    text-decoration: none;
+    color: black;
+}
+/*** Inhalt mein main***/
+/** display grid mit 2 spalten.**/
+main {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+/*** hier den fotos haben gleiche filter und
+ max(höher und breit)***/
+main .div-2 img,
+main .div-3 img {
+    width: 100%;
+    filter: sepia(3) brightness(2);
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 100%;
+}
+/*** die fotos haben andere efekt mit der hilfe hover***/
+main .div-2 img:hover,
+main .div-3 img:hover {
+    width: 100%;
+    transition: 0.5s;
+    filter: sepia(0) brightness(1);
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px black;
+}
+/** hier liegt alle divs in mein main****/
+main div {
+    padding: 10px;
+    margin: 10px;
+    border: 2px black groove;
+    text-align: center;
+    overflow: auto;
+    color: black;
+}
+/** und hier habe ich den divs hover gemacht.****/
+main div:hover {
+    padding: 10px;
+    margin: 10px;
+    border: 2px black dashed;
+    text-align: center;
+    overflow: auto;
+    color: navy;
+    box-shadow: 0px 0px 10px red;
+}
+/*** die 2 divs haben 2 rows für sich.***/
+main .div-2,
+main .div-3 {
+    grid-row-end: span 2;
+}
+/*** farbe für div***/
+main .div-1 {
+    background-color: rgba(128, 128, 128, 0.196);
+}
+/*** anadere farbe für den div-2***/
+main .div-2 {
+    background-color: rgba(135, 207, 235, 0.515);
+}
+/*** noch anader farbe***/
+main .div-3 {
+    background-color: rgba(255, 192, 203, 0.525);
+}
+/*** 4 Farbe für 4 div.***/
+main .div-4 {
+    background-color: rgba(255, 127, 80, 0.523);
+}
+/*** Inhalt mein Footer***/
+/*** display flex***/
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgba(222, 184, 135, 0.519);
+}
+/** *feste breit und höher****/
+footer div {
+    width: 120px;
+    height: 120px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px black dashed;
+    box-shadow: brown 0px 0px 10px;
+}
+/***feste breit und höher für den allen imgs im footer. ***/
+footer img {
+    width: 120px;
+    height: 120px;
+    margin: 10px;
+}
+/*** erste foto im footer mit animation 3sekonden***/
+footer .img-1 {
+    background-image: url(fahrrad-1.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    animation-name: img-1;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+}
+/*** Ab hier fingt meine animations mit drei unterschiedliche
+bilder***/
+@keyframes img-1 {
+    0% {
+        background-image: url(nature-2.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    50% {
+        background-image: url(auto-3.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    100% {
+        background-image: url(nature-5.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+}
+/***Zweite foto im footer mit animation 3sekonden***/
+footer .img-2 {
+    background-image: url(fahrrad-3.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    animation-name: img-2;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+/***Ab hier fingt meine animations mit drei unterschiedliche
+bilder***/
+@keyframes img-2 {
+    0% {
+        background-image: url(nature-8.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    50% {
+        background-image: url(nature-6.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    100% {
+        background-image: url(nature-2.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+}
+/***Dritte foto im footer mit animation 3sekonden***/
+footer .img-3 {
+    background-image: url(scooter-2.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    animation-name: img-3;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+}
+/***Ab hier fingt meine animations mit drei unterschiedliche
+bilder***/
+@keyframes img-3 {
+    0% {
+        background-image: url(nature-1.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    50% {
+        background-image: url(nature-4.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    100% {
+        background-image: url(fahrrad-1.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+}
